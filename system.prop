@@ -1,0 +1,51 @@
+#
+# system.prop for GT-S7500
+#
+
+## RIL, network
+rild.libpath=/system/lib/libsec-ril.so
+rild.libargs=-d /dev/smd0
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
+ro.telephony.ril_class=SamsungRIL
+ro.telephony.ril.v3=datacall,icccardstatus
+ro.telephony.call_ring.multiple=false
+ro.telephony.call_ring.delay=3000
+DEVICE_PROVISIONED=1
+
+## Wi-Fi
+wifi.interface=wlan0
+wifi.ap.interface=athap0
+
+## Display, graphics
+ro.sf.lcd_density=160
+ro.opengles.version=131072
+video.accelerate.hw=1
+debug.sf.hw=1
+debug.gr.numframebuffers=3
+
+## Performance settings.
+dalvik.vm.heapsize=64m
+ro.kernel.android.checkjni=0
+dalvik.vm.checkjni=false
+dalvik.vm.dexopt-data-only=1
+
+## Qualcomm
+com.qc.hardware=true
+debug.sf.hw=1
+debug.egl.hw=1
+debug.enabletr=true
+
+## USB, storage
+persist.sys.usb.config=adb,mass_storage
+persist.service.adb.enable=1
+ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1
+
+# MM module
+media.stagefright.enable-player=true
+media.stagefright.enable-meta=false
+media.stagefright.enable-scan=true
+media.stagefright.enable-http=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
