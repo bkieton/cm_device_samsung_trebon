@@ -80,6 +80,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
+## Enable repeatable keys in CWM
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.cwm.enable_key_repeat=true
+
 ## Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
@@ -92,7 +96,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.sh:root/init.qcom.sh \
     $(LOCAL_PATH)/ramdisk/GT-S7500.rle:root/GT-S7500.rle \
-    $(LOCAL_PATH)/ramdisk/fstab.qcom:root/fstab.qcom
+	$(LOCAL_PATH)/ramdisk/fstab.qcom:root/fstab.qcom
    
 
 # Qualcomm scripts
@@ -111,8 +115,8 @@ PRODUCT_COPY_FILES += \
 ## Wi-Fi config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/prebuilt/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
-    $(LOCAL_PATH)/prebuilt/bin/wlan_tool:system/bin/wlan_tool
+	$(LOCAL_PATH)/prebuilt/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
+	$(LOCAL_PATH)/prebuilt/bin/wlan_tool:system/bin/wlan_tool
 
 ## Vold config
 PRODUCT_COPY_FILES += \
@@ -124,7 +128,8 @@ PRODUCT_COPY_FILES += \
 
 ## Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
+    $(LOCAL_PATH)/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
+	$(LOCAL_PATH)/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
 
 ## Keychar
 PRODUCT_COPY_FILES += \
@@ -177,8 +182,8 @@ PRODUCT_COPY_FILES += \
 ## Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/calib.dat:system/etc/calib.dat \
-    $(LOCAL_PATH)/prebuilt/etc/param.dat:system/etc/param.dat \
-    $(LOCAL_PATH)/prebuilt/etc/sensors.dat:system/etc/sensors.dat
+	$(LOCAL_PATH)/prebuilt/etc/param.dat:system/etc/param.dat \
+	$(LOCAL_PATH)/prebuilt/etc/sensors.dat:system/etc/sensors.dat
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=2
 
