@@ -56,7 +56,7 @@ PRODUCT_PACKAGES += \
 
 ## Other hardware
 PRODUCT_PACKAGES += \
-    lights.msm7x27a \
+    lights.trebon \
 	camera.msm7x27a \
 	gps.msm7x27a \
 	power.msm7x27a
