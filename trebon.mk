@@ -30,7 +30,7 @@ PRODUCT_PACKAGES += \
     libqdutils \
     libtilerenderer
 
-# Omx
+## OMX
 PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libmm-omxcore \
@@ -56,17 +56,17 @@ PRODUCT_PACKAGES += \
 
 ## Other hardware
 PRODUCT_PACKAGES += \
-    lights.trebon \
-    camera.msm7x27a \
-    gps.msm7x27a \
-    power.msm7x27a
+    lights.msm7x27a \
+	camera.msm7x27a \
+	gps.msm7x27a \
+	power.msm7x27a
 
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
-    hciconfig \
+	hciconfig \
     hcitool \
-    gatttool 
+	gatttool
 
 ## Permissions
 PRODUCT_COPY_FILES += \
@@ -96,7 +96,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.sh:root/init.qcom.sh \
     $(LOCAL_PATH)/ramdisk/GT-S7500.rle:root/GT-S7500.rle \
-    $(LOCAL_PATH)/ramdisk/fstab.qcom:root/fstab.qcom
+	$(LOCAL_PATH)/ramdisk/lpm.rc:root/lpm.rc \
+	$(LOCAL_PATH)/ramdisk/fstab.jena:root/fstab.jena
    
 
 # Qualcomm scripts
@@ -108,15 +109,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/init/init.qcom.sdio.sh:/system/etc/init.qcom.sdio.sh \
     $(LOCAL_PATH)/prebuilt/etc/init/init.qcom.wifi.sh:/system/etc/init.qcom.wifi.sh
 
-# Bluetooth configuration
+## Bluetooth configuration
 PRODUCT_COPY_FILES += \
-    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
+	system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
 
 ## Wi-Fi config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/prebuilt/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
-    $(LOCAL_PATH)/prebuilt/bin/wlan_tool:system/bin/wlan_tool
+	$(LOCAL_PATH)/prebuilt/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
+	$(LOCAL_PATH)/prebuilt/bin/wlan_tool:system/bin/wlan_tool
 
 ## Vold config
 PRODUCT_COPY_FILES += \
@@ -129,7 +130,7 @@ PRODUCT_COPY_FILES += \
 ## Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-    $(LOCAL_PATH)/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
+	$(LOCAL_PATH)/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
 
 ## Keychar
 PRODUCT_COPY_FILES += \
@@ -182,10 +183,10 @@ PRODUCT_COPY_FILES += \
 ## Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/calib.dat:system/etc/calib.dat \
-    $(LOCAL_PATH)/prebuilt/etc/param.dat:system/etc/param.dat \
-    $(LOCAL_PATH)/prebuilt/etc/sensors.dat:system/etc/sensors.dat
+	$(LOCAL_PATH)/prebuilt/etc/param.dat:system/etc/param.dat \
+	$(LOCAL_PATH)/prebuilt/etc/sensors.dat:system/etc/sensors.dat
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=7
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=2
 
 ## We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -195,7 +196,7 @@ PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_LOCALES += mdpi
 
-## For userdebug builds
+## For easy debugging
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.allow.mock.location=1 \

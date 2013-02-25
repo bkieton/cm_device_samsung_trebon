@@ -32,7 +32,6 @@ PRODUCT_MODEL := GT-S7500
 
 ## Versioning
 CM_EXPERIMENTAL := true
-#CM_EXTRAVERSION := dev
 
 ## Bootanimation
 TARGET_SCREEN_HEIGHT := 480
