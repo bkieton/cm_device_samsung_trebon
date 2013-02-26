@@ -97,7 +97,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.qcom.sh:root/init.qcom.sh \
     $(LOCAL_PATH)/ramdisk/GT-S7500.rle:root/GT-S7500.rle \
 	$(LOCAL_PATH)/ramdisk/lpm.rc:root/lpm.rc \
-	$(LOCAL_PATH)/ramdisk/fstab.jena:root/fstab.jena
+	$(LOCAL_PATH)/ramdisk/fstab.trebon:root/fstab.trebon
    
 
 # Qualcomm scripts
