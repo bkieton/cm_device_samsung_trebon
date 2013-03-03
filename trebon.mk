@@ -57,16 +57,16 @@ PRODUCT_PACKAGES += \
 ## Other hardware
 PRODUCT_PACKAGES += \
     lights.msm7x27a \
-	camera.msm7x27a \
-	gps.msm7x27a \
-	power.msm7x27a
+    camera.msm7x27a \
+    gps.msm7x27a \
+    power.msm7x27a
 
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
-	hciconfig \
+    hciconfig \
     hcitool \
-	gatttool
+    gatttool
 
 ## Permissions
 PRODUCT_COPY_FILES += \
@@ -96,8 +96,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/ramdisk/init.qcom.sh:root/init.qcom.sh \
     $(LOCAL_PATH)/ramdisk/GT-S7500.rle:root/GT-S7500.rle \
-	$(LOCAL_PATH)/ramdisk/lpm.rc:root/lpm.rc \
-	$(LOCAL_PATH)/ramdisk/fstab.trebon:root/fstab.trebon
+    $(LOCAL_PATH)/ramdisk/lpm.rc:root/lpm.rc \
+    $(LOCAL_PATH)/ramdisk/fstab.trebon:root/fstab.trebon
    
 
 # Qualcomm scripts
@@ -111,13 +111,13 @@ PRODUCT_COPY_FILES += \
 
 ## Bluetooth configuration
 PRODUCT_COPY_FILES += \
-	system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
+    #$(LOCAL_PATH)/prebuilt/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf
 
 ## Wi-Fi config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-	$(LOCAL_PATH)/prebuilt/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
-	$(LOCAL_PATH)/prebuilt/bin/wlan_tool:system/bin/wlan_tool
+    $(LOCAL_PATH)/prebuilt/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
+    $(LOCAL_PATH)/prebuilt/bin/wlan_tool:system/bin/wlan_tool
 
 ## Vold config
 PRODUCT_COPY_FILES += \
@@ -130,7 +130,7 @@ PRODUCT_COPY_FILES += \
 ## Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-	$(LOCAL_PATH)/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
+    $(LOCAL_PATH)/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
 
 ## Keychar
 PRODUCT_COPY_FILES += \
@@ -183,8 +183,8 @@ PRODUCT_COPY_FILES += \
 ## Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/calib.dat:system/etc/calib.dat \
-	$(LOCAL_PATH)/prebuilt/etc/param.dat:system/etc/param.dat \
-	$(LOCAL_PATH)/prebuilt/etc/sensors.dat:system/etc/sensors.dat
+    $(LOCAL_PATH)/prebuilt/etc/param.dat:system/etc/param.dat \
+    $(LOCAL_PATH)/prebuilt/etc/sensors.dat:system/etc/sensors.dat
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=2
 

@@ -19,13 +19,13 @@
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib/libsec-ril.so:system/lib/libsec-ril.so \
     $(LOCAL_PATH)/lib/libsecril-client.so:system/lib/libsecril-client.so \
-	$(LOCAL_PATH)/lib/libril.so:system/lib/libril.so \
-	$(LOCAL_PATH)/bin/rild:system/bin/rild \
-	$(LOCAL_PATH)/bin/qmuxd:system/bin/qmuxd
+    $(LOCAL_PATH)/lib/libril.so:system/lib/libril.so \
+    $(LOCAL_PATH)/bin/rild:system/bin/rild \
+    $(LOCAL_PATH)/bin/qmuxd:system/bin/qmuxd
 
 ## Camera
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/lib/libcamera.so:system/lib/libcamera.so \
+    $(LOCAL_PATH)/lib/libcamera.so:system/lib/libcamera.so \
     $(LOCAL_PATH)/lib/liboemcamera.so:system/lib/liboemcamera.so \
     $(LOCAL_PATH)/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
     $(LOCAL_PATH)/lib/libActionShot.so:system/lib/libActionShot.so \
@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \
 
 ## Atheros AR6003 firmware
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/wifi/ar6000.ko:system/wifi/ar6000.ko \
+    $(LOCAL_PATH)/wifi/ar6000.ko:system/wifi/ar6000.ko \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.1.1/athtcmd_ram.bin:system/wifi/ath6k/AR6003/hw2.1.1/athtcmd_ram.bin \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.1.1/athwlan.bin:system/wifi/ath6k/AR6003/hw2.1.1/athwlan.bin \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.1.1/athwlan_mobile.bin:system/wifi/ath6k/AR6003/hw2.1.1/athwlan_mobile.bin \
@@ -80,8 +80,8 @@ PRODUCT_COPY_FILES += \
 
 ## Sensors
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/lib/hw/sensors.msm7x27a.so:system/lib/hw/sensors.msm7x27a.so \
-	$(LOCAL_PATH)/lib/libacdapi_azi.so:system/lib/libacdapi_azi.so
+    $(LOCAL_PATH)/lib/hw/sensors.msm7x27a.so:system/lib/hw/sensors.msm7x27a.so \
+    $(LOCAL_PATH)/lib/libacdapi_azi.so:system/lib/libacdapi_azi.so
 
 ## GPU firmware
 PRODUCT_COPY_FILES += \
@@ -91,38 +91,38 @@ PRODUCT_COPY_FILES += \
 ## Binaries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/rmt_storage:system/bin/rmt_storage \
-	$(LOCAL_PATH)/bin/abtfilt:system/bin/abtfilt \
+    $(LOCAL_PATH)/bin/abtfilt:system/bin/abtfilt \
     $(LOCAL_PATH)/bin/hci_qcomm_init:system/bin/hci_qcomm_init \
-	$(LOCAL_PATH)/bin/qcm_dut:system/bin/qcm_dut
+    $(LOCAL_PATH)/bin/qcm_dut:system/bin/qcm_dut
 
 ## Wireless
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/bin/hostapd:system/bin/hostapd \
-	$(LOCAL_PATH)/bin/hostapd_cli:system/bin/hostapd_cli \
-	$(LOCAL_PATH)/bin/hostapd_wps:system/bin/hostapd_wps \
-	$(LOCAL_PATH)/bin/wmiconfig:system/bin/wmiconfig \
-	$(LOCAL_PATH)/bin/bridgemgrd:system/bin/hostapd_wps \
-	$(LOCAL_PATH)/bin/netmgrd:system/bin/netmgrd
+    $(LOCAL_PATH)/bin/hostapd:system/bin/hostapd \
+    $(LOCAL_PATH)/bin/hostapd_cli:system/bin/hostapd_cli \
+    $(LOCAL_PATH)/bin/hostapd_wps:system/bin/hostapd_wps \
+    $(LOCAL_PATH)/bin/wmiconfig:system/bin/wmiconfig \
+    $(LOCAL_PATH)/bin/bridgemgrd:system/bin/hostapd_wps \
+    $(LOCAL_PATH)/bin/netmgrd:system/bin/netmgrd
 
 ## Battery, charging	
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/bin/playlpm:system/bin/playlpm \
-	$(LOCAL_PATH)/bin/charging_mode:system/bin/charging_mode \
-	$(LOCAL_PATH)/lib/libQmageDecoder.so:system/lib/libQmageDecoder.so \
-	$(LOCAL_PATH)/lib/libqmage_bluesea.so:system/lib/libqmage_bluesea.so \
+    $(LOCAL_PATH)/bin/playlpm:system/bin/playlpm \
+    $(LOCAL_PATH)/bin/charging_mode:system/bin/charging_mode \
+    $(LOCAL_PATH)/lib/libQmageDecoder.so:system/lib/libQmageDecoder.so \
+    $(LOCAL_PATH)/lib/libqmage_bluesea.so:system/lib/libqmage_bluesea.so \
 
 ## Other libs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib/libdiag.so:system/lib/libdiag.so \
-	$(LOCAL_PATH)/lib/libdsm.so:system/lib/libdsm.so \
-	$(LOCAL_PATH)/lib/libnv.so:system/lib/libnv.so \
-	$(LOCAL_PATH)/lib/liboncrpc.so:system/lib/liboncrpc.so \
-	$(LOCAL_PATH)/lib/libqueue.so:system/lib/libqueue.so \
-	$(LOCAL_PATH)/lib/libqc-opt.so:system/lib/libqc-opt.so
+    $(LOCAL_PATH)/lib/libdsm.so:system/lib/libdsm.so \
+    $(LOCAL_PATH)/lib/libnv.so:system/lib/libnv.so \
+    $(LOCAL_PATH)/lib/liboncrpc.so:system/lib/liboncrpc.so \
+    $(LOCAL_PATH)/lib/libqueue.so:system/lib/libqueue.so \
+    $(LOCAL_PATH)/lib/libqc-opt.so:system/lib/libqc-opt.so
 
 ## OMX
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/lib/omx/libOmxAacDec.so:system/lib/libOmxAacDec.so \
+    $(LOCAL_PATH)/lib/omx/libOmxAacDec.so:system/lib/libOmxAacDec.so \
     $(LOCAL_PATH)/lib/omx/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
     $(LOCAL_PATH)/lib/omx/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
     $(LOCAL_PATH)/lib/omx/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
