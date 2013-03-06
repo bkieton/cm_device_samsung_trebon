@@ -26,7 +26,7 @@ BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_SOURCE := kernel/samsung/msm7x27a
 TARGET_KERNEL_CONFIG := cyanogenmod_trebon_defconfig
-#TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 
 ## Platform
 TARGET_ARCH := arm
@@ -43,7 +43,7 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 ## Assert
-TARGET_OTA_ASSERT_DEVICE := trebon,GT-S7500,GT-S7500L
+TARGET_OTA_ASSERT_DEVICE := trebon,GT-S7500,GT-S7500L,GT-S7500T
 
 ## Webkit
 #DYNAMIC_SHARED_LIBV8SO := true
@@ -129,6 +129,7 @@ TARGET_BOOTANIMATION_USE_RGB565 := true
 
 ## Use device specific modules
 TARGET_PROVIDES_LIBLIGHTS := true
+TARGET_PROVIDES_POWERHAL := true
 
 ## Recovery
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/trebon/recovery/graphics.c
