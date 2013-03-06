@@ -50,18 +50,23 @@ failed ()
 
 start_hciattach ()
 {
-  /system/bin/hciattach -n $BTS_DEVICE $BTS_TYPE $BTS_BAUD &
-  hciattach_pid=$!
-  logi "start_hciattach: pid = $hciattach_pid"
   echo 1 > $BLUETOOTH_SLEEP_PATH
+  /system/bin/hciattach -n $QSOC_DEVICE $QSOC_TYPE $QSOC_BAUD &
+  hciattach_pid=$!
+  logi "#################################################"
+  logi "start_hciattach: pid = $hciattach_pid"
+  logi "#################################################"
+  #for debug purposes
 }
 
 kill_hciattach ()
 {
-  echo 0 > $BLUETOOTH_SLEEP_PATH
+  logi "#################################################"
   logi "kill_hciattach: pid = $hciattach_pid"
+  logi "#################################################"
   ## careful not to kill zero or null!
   kill -TERM $hciattach_pid
+  echo 0 > $BLUETOOTH_SLEEP_PATH
   # this shell doesn't exit now -- wait returns for normal exit
 }
 
@@ -79,52 +84,22 @@ do
 done
 shift $(($OPTIND-1))
 
-# Note that "hci_qcomm_init -e" prints expressions to set the shell variables
-# BTS_DEVICE, BTS_TYPE, BTS_BAUD, and BTS_ADDRESS.
-
-#Selectively Disable sleep
-BOARD=`getprop ro.product.device`
-
-POWER_CLASS=`getprop qcom.bt.dev_power_class`
-
-#find the transport type
-TRANSPORT=`getprop ro.qualcomm.bt.hci_transport`
-logi "Transport : $TRANSPORT"
-
-case $POWER_CLASS in
-  1) PWR_CLASS="-p 0" ;
-     logi "Power Class: 1";;
-  2) PWR_CLASS="-p 1" ;
-     logi "Power Class: 2";;
-  3) PWR_CLASS="-p 2" ;
-     logi "Power Class: CUSTOM";;
-  *) PWR_CLASS="";
-     logi "Power Class: Ignored. Default(1) used (1-CLASS1/2-CLASS2/3-CUSTOM)";
-     logi "Power Class: To override, Before turning BT ON; setprop qcom.bt.dev_power_class <1 or 2 or 3>";;
-esac
-
-eval $(/system/bin/hci_qcomm_init -e $PWR_CLASS && echo "exit_code_hci_qcomm_init=0" || echo "exit_code_hci_qcomm_init=1")
+eval $(/system/bin/hci_qcomm_init -e 1 && echo "exit_code_hci_qcomm_init=0" || echo "exit_code_hci_qcomm_init=1")
 
 case $exit_code_hci_qcomm_init in
   0) logi "Bluetooth QSoC firmware download succeeded, $BTS_DEVICE $BTS_TYPE $BTS_BAUD";;
   *) failed "Bluetooth QSoC firmware download failed" $exit_code_hci_qcomm_init;;
 esac
 
+logi "TRAP kill_hciattach"
 # init does SIGTERM on ctl.stop for service
 trap "kill_hciattach" TERM INT
 
-case $TRANSPORT in
-    "smd")
-        logi "Seting property to insert the hci smd transport module"
-        setprop bt.hci_smd.driver.load 1
-     ;;
-     *)
-        logi "start hciattach"
-        start_hciattach
+logi "calling start_hciattach()..."
+start_hciattach
 
-        wait $hciattach_pid
-        logi "Bluetooth stopped"
-     ;;
-esac
+wait $hciattach_pid
+
+logi "Bluetooth stopped"
 
 exit 0
