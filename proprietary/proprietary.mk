@@ -15,6 +15,10 @@
 #	Samsung proprietary binaries and libraries
 #
 
+## Libs needed to build open source libs
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/lib/libseccameraadaptor.so:obj/lib/libseccameraadaptor.so
+
 ## RIL (radio interface relay)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib/libsec-ril.so:system/lib/libsec-ril.so \
